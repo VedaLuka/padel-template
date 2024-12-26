@@ -1,0 +1,652 @@
+/* =====================================
+     Reset and Base Styles
+   ===================================== */
+   :root {
+    /* Theme Colors */
+    --primary-blue: #007BFF;
+    --light-blue: #E3F2FD;
+    --accent-gold: #FFD700;
+    --dark-blue: #0056D2;
+    --neutral-gray: #f9f9f9;
+  
+    /* Text Colors */
+    --text-dark: #333;
+    --text-light: #fff;
+  
+    /* Shadows */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.2);
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-blue);
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+ /* =====================================
+     Navigation Bar (Navbar) Styles
+   ===================================== */
+.navbar {
+    background: linear-gradient(45deg, #007BFF, #0056D2); /* Gradient background */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .navbar .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navbar .nav-links li {
+    position: relative;
+  }
+  
+  .navbar .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .navbar .nav-links li a:hover {
+    color: #FFD700; /* Gold hover effect */
+    transform: scale(1.1); /* Slight enlargement */
+  }
+  
+  /* Hamburger Menu Icon */
+  .navbar .menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .navbar .menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar .menu-toggle {
+      display: flex;
+    }
+  
+    .navbar .nav-links {
+      flex-direction: column;
+      gap: 1rem;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: linear-gradient(45deg, #007BFF, #0056D2);
+      width: 200px;
+      padding: 1rem;
+      transform: translateX(100%); /* Hidden off-screen by default */
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .navbar .nav-links.show {
+      transform: translateX(0); /* Slides into view when .show is added */
+    }
+  }
+  
+  
+/* =====================================
+     Home Section Styles with Video Background
+   ===================================== */
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+   .section {
+     padding: 4rem 0;
+   }
+   
+   .home-section {
+     position: relative;
+     width: 100%;
+     min-height: 100vh; /* Ensure it occupies at least full screen */
+     overflow: hidden;
+   }
+   
+   /* Video Background Styles */
+   .background-video {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100vh; /* Full viewport height by default */
+     object-fit: cover; /* Ensures the video covers the entire section */
+     z-index: -1; /* Places the video behind the content */
+   }
+   
+   /* Content Overlay Styles */
+   .home-section .content {
+     position: absolute; /* Position content above the video */
+     top: 50%; /* Vertically centered */
+     left: 5%; /* Align closer to the left */
+     transform: translateY(-50%); /* Center the content vertically */
+     z-index: 1;
+     text-align: left; /* Left-align text and button */
+   }
+   
+   /* Book a Court Text Styles */
+   .home-section .book-court {
+     color: #ffffff; /* White text */
+     font-family: 'Poppins', sans-serif; /* Clean and modern font */
+     font-weight: 700; /* Bold font weight */
+     font-size: 6rem; /* Larger font size for emphasis */
+     text-transform: capitalize; /* Transform text for style */
+     margin-bottom: 1.5rem; /* Spacing below the text */
+     line-height: 1.2; /* Compact line height */
+   
+     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Strong shadow for readability */
+   }
+   
+   /* Book Now Button Styles */
+   .home-section .book-now-btn {
+     background: #FF5722; /* Vibrant orange button */
+     color: #ffffff; /* White text */
+     padding: 0.75rem 1.5rem; /* Comfortable padding */
+     border-radius: 5px; /* Slightly rounded corners */
+     font-family: 'Poppins', sans-serif; /* Consistent font */
+     font-weight: 600; /* Medium-bold font weight */
+     font-size: 1rem; /* Standard button size */
+     text-decoration: none; /* Remove underline */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   
+   .home-section .book-now-btn:hover {
+     background: #E64A19; /* Darker orange on hover */
+     transform: scale(1.05); /* Slightly enlarge on hover */
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+   }
+   
+   /* Responsive Design for Phones */
+   @media (max-width: 768px) {
+     .home-section {
+       min-height: 60vh; /* Adjust height for smaller screens */
+     }
+   
+     .background-video {
+       height: 60vh; /* Ensure the video scales properly */
+     }
+   
+     .home-section .content {
+       top: 50%; /* Keep it vertically centered */
+       left: 5%; /* Adjust the content alignment for smaller screens */
+       transform: translateY(-50%); /* Ensure proper vertical centering */
+       text-align: left; /* Maintain left alignment */
+     }
+   
+     /* Increased font size for mobile */
+     .home-section .book-court {
+       font-size: 3.2rem !important; /* Force larger font size */
+       line-height: 1; /* Adjust line height for readability */
+     }
+   
+     .home-section .book-now-btn {
+       font-size: 1.1rem !important; /* Slightly larger button size */
+       padding: 0.75rem 1.5rem; /* Adjust padding */
+     }
+   }
+   
+   
+/* =====================================
+     About Section Styles
+   ===================================== */
+   .about-section {
+    background: linear-gradient(135deg, #E3F2FD, #e7eef2, #B3E5FC); /* Gradient with multiple colors */
+    background-size: 200% 200%; /* Extend the gradient for smooth movement */
+    animation: gradientMove 20s infinite alternate ease-in-out; /* Slow, smooth fade animation */
+    padding: 2rem 0; /* Same padding as Schedule Section */
+  }
+  
+  .about-section h2 {
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 1rem; /* Same spacing as Schedule Section */
+    font-size: 2rem; /* Font size consistency with Schedule Section */
+  }
+  
+  .about-section p {
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 1rem; /* Match Schedule Section font size */
+    line-height: 1.6; /* Adjust for readability */
+    max-width: 800px; /* Center text with a fixed width */
+    margin: 0 auto; /* Center the paragraph */
+  }
+  
+  /* Keyframes for Smooth Gradient Movement */
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%; /* Start position */
+    }
+    50% {
+      background-position: 100% 50%; /* Midway position */
+    }
+    100% {
+      background-position: 0% 50%; /* Return to start */
+    }
+  }
+  
+
+/* =====================================
+     Our Courts Section Styles
+   ===================================== */
+   .our-courts-section {
+    background: linear-gradient(135deg, #E3F2FD, #B3E5FC); /* Light blue gradient */
+    padding: 4rem 1rem;
+    text-align: center;
+    border-top: 5px solid var(--primary-blue); /* Optional for section separation */
+  }
+  
+  .our-courts-section h2 {
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem; /* More spacing for hierarchy */
+    text-transform: uppercase;
+    font-size: 2rem; /* Larger title size */
+    font-weight: 700;
+    letter-spacing: 2px; /* More spacing for a modern look */
+  }
+  
+  .our-courts-section p {
+    font-size: 1.2rem; /* Slightly larger font for readability */
+    color: var(--text-dark);
+    margin-bottom: 2.5rem; /* More spacing below */
+    line-height: 1.8; /* Improve readability */
+    max-width: 700px; /* Restrict width for better alignment */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Slider Styles */
+  .slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px; /* Slightly larger radius for softer edges */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    height: 400px; /* Increased height for a more immersive feel */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better contrast */
+    z-index: 1;
+  }
+  
+  .slide:hover::before {
+    background: rgba(0, 0, 0, 0.1); /* Lighten overlay on hover */
+  }
+  
+  /* Navigation Buttons */
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--primary-blue);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2; /* Ensure buttons are above overlay */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .slider-btn:hover {
+    background: var(--primary-blue);
+    color: #fff;
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  }
+  
+  .prev-btn {
+    left: 15px;
+  }
+  
+  .next-btn {
+    right: 15px;
+  }
+/* =====================================
+       Schedule Section Styles
+     ===================================== */
+     .schedule-section {
+        background: linear-gradient(135deg, #E3F2FD, #e7eef2, #B3E5FC);
+        background-size: 200% 200%; /* Extend the gradient for smooth movement */
+        animation: gradientMove 20s infinite alternate ease-in-out; /* Slow and smooth */
+        padding: 4rem 1rem; /* Spacious layout */
+        text-align: center;
+        border-top: 5px solid var(--primary-blue); /* Optional for separation */
+      }
+      
+      .schedule-section h2 {
+        color: var(--primary-blue);
+        text-align: center;
+        margin-bottom: 1.5rem; /* More spacing below the title */
+        text-transform: uppercase;
+        font-size: 2rem; /* Larger font size for consistency */
+        font-weight: 700;
+        letter-spacing: 2px; /* Adds a modern touch */
+      }
+      
+      .schedule-section p {
+        font-size: 1.2rem; /* Slightly larger font for readability */
+        color: var(--text-dark);
+        margin-bottom: 2.5rem; /* Increased spacing below paragraph */
+        line-height: 1.8; /* Improved readability */
+        max-width: 700px; /* Restrict width for centered content */
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      /* Keyframes for Smooth Gradient Movement */
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%; /* Start position */
+        }
+        50% {
+          background-position: 100% 50%; /* Midway position */
+        }
+        100% {
+          background-position: 0% 50%; /* Return to start */
+        }
+      }
+      
+
+  
+  /* =====================================
+       Find Our Club Section Styles
+     ===================================== */
+.find-club-section {
+    background: linear-gradient(135deg, #E3F2FD, #B3E5FC); /* Light blue gradient */
+    padding: 4rem 1rem;
+    text-align: center;
+    border-top: 5px solid var(--primary-blue); /* Optional for separation */
+  }
+  
+  .find-club-section h2 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 1.5rem; /* Increased spacing for hierarchy */
+    text-transform: uppercase;
+    font-size: 2rem; /* Larger font size for consistency */
+    font-weight: 700;
+    letter-spacing: 2px; /* Adds a modern touch */
+  }
+  
+  .find-club-section p {
+    font-size: 1.2rem; /* Slightly larger font */
+    color: var(--text-dark);
+    margin-bottom: 2.5rem; /* More spacing below */
+    line-height: 1.8; /* Improve readability */
+    max-width: 700px; /* Centered layout */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .map-container {
+    max-width: 800px;
+    height: 400px; /* Fixed height for consistent layout */
+    margin: 0 auto;
+    border: 3px solid var(--primary-blue); /* Blue border for emphasis */
+    border-radius: 15px; /* Slightly larger radius for a modern look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0; /* Remove default iframe border */
+  }
+  
+  
+ /* =====================================
+     Contact Section Styles
+   ===================================== */
+.contact-section {
+    background: linear-gradient(135deg, #E3F2FD, #e7eef2); /* Light blue gradient */
+    padding: 4rem 1rem; /* Increased padding for more spacing */
+    text-align: center;
+    border-top: 5px solid var(--primary-blue); /* Top border for emphasis */
+  }
+  
+  .contact-section h2 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  
+  .contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #fff; /* White background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .contact-section .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .contact-section .form-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-section .form-group input,
+  .contact-section .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contact-section .form-group input:focus,
+  .contact-section .form-group textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+    outline: none;
+  }
+  
+  .contact-section .form-group textarea {
+    resize: none; /* Disable resizing for better layout */
+  }
+  
+  .contact-section button {
+    background: linear-gradient(45deg, var(--primary-blue), var(--dark-blue)); /* Gradient button */
+    color: var(--text-light);
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px; /* Rounded button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .contact-section button:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  }
+  
+  .contact-section button:focus {
+    outline: 2px dashed var(--accent-gold);
+    outline-offset: 4px;
+  }
+  
+/* =====================================
+     Footer Styles
+   ===================================== */
+   .footer {
+    background: var(--primary-blue);
+    color: var(--text-light);
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+  }
+  
+  .footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer .social-link {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer .social-link:hover {
+    color: var(--accent-gold);
+    transform: scale(1.2);
+  }
+  
+  .footer p:last-child {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* =====================================
+       Responsive Design
+     ===================================== */
+  @media (max-width: 768px) {
+    .home-section {
+      height: 30vh;
+    }
+  
+    .home-section .book-court {
+      font-size: 2.5rem;
+    }
+  
+    .home-section .book-now-btn {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+  
+    .navbar .menu-toggle {
+      display: flex;
+    }
+  
+    .navbar .nav-links {
+      flex-direction: column;
+      gap: 1rem;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: linear-gradient(45deg, var(--primary-blue), var(--dark-blue));
+      width: 200px;
+      padding: 1rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 4px 6px var(--shadow-light);
+    }
+  
+    .navbar .nav-links.show {
+      transform: translateX(0);
+    }
+  }
+  
