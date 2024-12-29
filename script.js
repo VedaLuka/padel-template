@@ -94,3 +94,30 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  let currentIndex = 0;
+
+  // Show the first slide initially
+  slides[currentIndex].classList.add('active-slide');
+
+  // Function to update slides
+  const updateSlides = (index) => {
+    slides.forEach(slide => slide.classList.remove('active-slide'));
+    slides[index].classList.add('active-slide');
+  };
+
+  // Previous button event
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlides(currentIndex);
+  });
+
+  // Next button event
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlides(currentIndex);
+  });
+});

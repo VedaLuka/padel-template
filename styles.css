@@ -325,38 +325,84 @@
   margin-right: auto;
 }
 
-/* Image Grid Styles */
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-  gap: 2rem; /* Space between grid items */
-  margin-top: 2rem; /* Space above the grid */
+/* Slideshow Styles */
+.slideshow-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
-.image-item {
+.slide {
+  display: none;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px; /* Smooth corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+.active-slide {
+  display: block;
 }
 
-.image-item img:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+.slide img {
+  width: 100%; /* Make the image take the full width of the container */
+  height: 400px; /* Fixed height for uniformity */
+  object-fit: cover; /* Ensures the image scales properly without distortion */
+  border-radius: 10px;
 }
 
-.image-item h3 {
-  margin-top: 0.5rem;
+.slide h3 {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 1.2rem;
   color: var(--primary-blue);
   text-transform: uppercase;
   font-weight: 600;
 }
+
+/* Navigation Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--primary-blue);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2; /* Ensure buttons are above content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slider-btn:hover {
+  background: var(--primary-blue);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.prev-btn {
+  left: 15px;
+}
+
+.next-btn {
+  right: 15px;
+}
+
+/* Adjust position on smaller screens */
+@media (max-width: 768px) {
+  .slider-btn {
+    top: 60%; /* Lower position for navigation buttons on smaller screens */
+  }
+}
+
 
 /* =====================================
        Schedule Section Styles
@@ -517,94 +563,6 @@
     border: 0; /* Remove default iframe border */
   }
   
-  
- /* =====================================
-     Contact Section Styles
-   ===================================== */
-.contact-section {
-    background: linear-gradient(135deg, #E3F2FD, #e7eef2); /* Light blue gradient */
-    padding: 4rem 1rem; /* Increased padding for more spacing */
-    text-align: center;
-    border-top: 5px solid var(--primary-blue); /* Top border for emphasis */
-  }
-  
-  .contact-section h2 {
-    color: var(--primary-blue);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-  }
-  
-  .contact-section form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: #fff; /* White background for contrast */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-  
-  .contact-section .form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
-  }
-  
-  .contact-section .form-group label {
-    display: block;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
-  }
-  
-  .contact-section .form-group input,
-  .contact-section .form-group textarea {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .contact-section .form-group input:focus,
-  .contact-section .form-group textarea:focus {
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
-    outline: none;
-  }
-  
-  .contact-section .form-group textarea {
-    resize: none; /* Disable resizing for better layout */
-  }
-  
-  .contact-section button {
-    background: linear-gradient(45deg, var(--primary-blue), var(--dark-blue)); /* Gradient button */
-    color: var(--text-light);
-    padding: 0.8rem 2rem;
-    font-size: 1.2rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    border: none;
-    border-radius: 50px; /* Rounded button */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .contact-section button:hover {
-    transform: scale(1.05); /* Slight enlargement on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-  }
-  
-  .contact-section button:focus {
-    outline: 2px dashed var(--accent-gold);
-    outline-offset: 4px;
-  }
-  
 /* =====================================
      Footer Styles
    ===================================== */
@@ -662,6 +620,18 @@
   .footer .phone-number:hover {
     color: rgba(255, 255, 255, 1);
   }
+
+  .email-link {
+    color: var(--accent-gold); /* Use the same yellow color variable as the phone link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .email-link:hover {
+    color: rgba(255, 223, 0, 0.8); /* Slightly lighter yellow on hover */
+  }
+  
   
   .footer p:last-child {
     font-size: 0.9rem;
