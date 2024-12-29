@@ -38,6 +38,22 @@
     margin: 0 auto;
   }
   
+/* General Content Styling for Sections (Excludes #home section) */
+.section:not(#home) .content {
+  opacity: 0; /* Start invisible */
+  transform: translateY(50px); /* Start below the viewport */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth animation */
+}
+
+/* Active class for animation */
+.section:not(#home) .content.active {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Slide into place */
+}
+
+
+
+
  /* =====================================
      Navigation Bar (Navbar) Styles
    ===================================== */
@@ -248,18 +264,22 @@
   .about-section h2 {
     text-align: center;
     color: var(--primary-blue);
-    margin-bottom: 1rem; /* Same spacing as Schedule Section */
-    font-size: 2rem; /* Font size consistency with Schedule Section */
+    margin-bottom: 1.5rem; /* Updated for more spacing */
+    text-transform: uppercase; /* Added for consistency */
+    font-size: 2rem; /* Larger title size */
+    font-weight: 700; /* Bold for emphasis */
+    letter-spacing: 2px; /* Modern look with spacing */
   }
   
   .about-section p {
     text-align: center;
     color: var(--text-dark);
-    font-size: 1rem; /* Match Schedule Section font size */
-    line-height: 1.6; /* Adjust for readability */
+    font-size: 1.2rem; /* Match Our Courts Section font size */
+    line-height: 1.8; /* Improve readability */
     max-width: 800px; /* Center text with a fixed width */
     margin: 0 auto; /* Center the paragraph */
   }
+  
   
   /* Keyframes for Smooth Gradient Movement */
   @keyframes gradientMove {
@@ -277,107 +297,67 @@
 
 /* =====================================
      Our Courts Section Styles
-   ===================================== */
-   .our-courts-section {
-    background: linear-gradient(135deg, #E3F2FD, #B3E5FC); /* Light blue gradient */
-    padding: 4rem 1rem;
-    text-align: center;
-    border-top: 5px solid var(--primary-blue); /* Optional for section separation */
-  }
-  
-  .our-courts-section h2 {
-    text-align: center;
-    color: var(--primary-blue);
-    margin-bottom: 1.5rem; /* More spacing for hierarchy */
-    text-transform: uppercase;
-    font-size: 2rem; /* Larger title size */
-    font-weight: 700;
-    letter-spacing: 2px; /* More spacing for a modern look */
-  }
-  
-  .our-courts-section p {
-    font-size: 1.2rem; /* Slightly larger font for readability */
-    color: var(--text-dark);
-    margin-bottom: 2.5rem; /* More spacing below */
-    line-height: 1.8; /* Improve readability */
-    max-width: 700px; /* Restrict width for better alignment */
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  /* Slider Styles */
-  .slider {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 15px; /* Slightly larger radius for softer edges */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
-  }
-  
-  .slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .slide {
-    min-width: 100%;
-    height: 400px; /* Increased height for a more immersive feel */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-  
-  .slide::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better contrast */
-    z-index: 1;
-  }
-  
-  .slide:hover::before {
-    background: rgba(0, 0, 0, 0.1); /* Lighten overlay on hover */
-  }
-  
-  /* Navigation Buttons */
-  .slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.8);
-    color: var(--primary-blue);
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 2; /* Ensure buttons are above overlay */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .slider-btn:hover {
-    background: var(--primary-blue);
-    color: #fff;
-    transform: scale(1.1); /* Slightly enlarge on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-  }
-  
-  .prev-btn {
-    left: 15px;
-  }
-  
-  .next-btn {
-    right: 15px;
-  }
+===================================== */
+.our-courts-section {
+  background: linear-gradient(135deg, #E3F2FD, #B3E5FC); /* Light blue gradient */
+  padding: 4rem 1rem;
+  text-align: center;
+  border-top: 5px solid var(--primary-blue); /* Optional for section separation */
+}
+
+.our-courts-section h2 {
+  text-align: center;
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem; /* More spacing for hierarchy */
+  text-transform: uppercase;
+  font-size: 2rem; /* Larger title size */
+  font-weight: 700;
+  letter-spacing: 2px; /* More spacing for a modern look */
+}
+
+.our-courts-section p {
+  font-size: 1.2rem; /* Slightly larger font for readability */
+  color: var(--text-dark);
+  margin-bottom: 2.5rem; /* More spacing below */
+  line-height: 1.8; /* Improve readability */
+  max-width: 700px; /* Restrict width for better alignment */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Image Grid Styles */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 2rem; /* Space between grid items */
+  margin-top: 2rem; /* Space above the grid */
+}
+
+.image-item {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Smooth corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.image-item img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.image-item h3 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--primary-blue);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 /* =====================================
        Schedule Section Styles
      ===================================== */
@@ -423,6 +403,71 @@
         }
       }
       
+
+
+/* Pricing Section Styles */
+.pricing-section {
+  background: linear-gradient(135deg, #E3F2FD, #e7eef2, #B3E5FC); /* Match the Schedule Section */
+  background-size: 200% 200%;
+  animation: gradientMove 20s infinite alternate ease-in-out;
+  padding: 4rem 1rem;
+  text-align: center;
+  border-top: 5px solid var(--primary-blue);
+}
+
+.pricing-section h2 {
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.pricing-section p {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 4rem; /* Increased spacing below paragraph */
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Pricing Boxes */
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.pricing-box {
+  background: #ffffff;
+  border: 2px solid var(--primary-blue);
+  border-radius: 10px;
+  padding: 2rem;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-box h3 {
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.pricing-box p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
 
   
   /* =====================================
@@ -566,8 +611,9 @@
    .footer {
     background: var(--primary-blue);
     color: var(--text-light);
-    padding: 2rem 0;
+    padding: 2.5rem 1rem;
     text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .footer .container {
@@ -576,32 +622,45 @@
   }
   
   .footer h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
   }
   
   .footer p {
     font-size: 1rem;
-    margin-bottom: 1rem;
-    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
   }
   
   .footer .social-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
   }
   
   .footer .social-link {
-    font-size: 1.5rem;
-    color: var(--text-light);
+    font-size: 2rem; /* Larger icons */
+    color: rgba(255, 255, 255, 0.9);
     transition: color 0.3s ease, transform 0.3s ease;
   }
   
   .footer .social-link:hover {
     color: var(--accent-gold);
-    transform: scale(1.2);
+    transform: scale(1.3);
+  }
+  
+  .footer .phone-number {
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .footer .phone-number:hover {
+    color: rgba(255, 255, 255, 1);
   }
   
   .footer p:last-child {
@@ -609,6 +668,7 @@
     margin-top: 1rem;
     color: rgba(255, 255, 255, 0.8);
   }
+  
   
   /* =====================================
        Responsive Design

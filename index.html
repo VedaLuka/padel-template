@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Padel Club</title>
+  <title>Padel Breeze</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
@@ -15,28 +15,28 @@
 
 <!-- Navigation Bar -->
 <nav class="navbar">
-    <div class="container">
-      <!-- Logo -->
-      <a href="#" class="logo">Padel Club</a>
-  
-      <!-- Hamburger Menu -->
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-  
-      <!-- Navigation Links -->
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#find-our-club">Find Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <div class="container">
+    <!-- Logo -->
+    <a href="#" class="logo">Padel Breeze</a>
+
+    <!-- Hamburger Menu -->
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </div>
-  </nav>
-  
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#pricing">Pricing</a></li> <!-- Added Pricing Link -->
+      <li><a href="#find-our-club">Find Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
 <!-- Home Section -->
 <section id="home" class="section home-section">
@@ -62,57 +62,114 @@
   <section id="about" class="section about-section">
     <div class="content">
       <h2>About Us</h2>
-      <p>Padel Club is the ultimate destination for Padel enthusiasts. We provide top-notch facilities, professional coaching, and a welcoming community for all skill levels.</p>
+      <p>At Padel Breeze, we provide a premium padel court and a relaxing lounge for players of all levels. Join us for great games, cozy lounges, and a welcoming community.
+
+      </p>
     </div>
   </section>
 
-  <!-- Our Courts Section -->
+<!-- Our Courts Section -->
 <section id="our-courts" class="section our-courts-section">
+  <div class="content">
+    <h2>Our Courts</h2>
+    <p>Explore our world-class courts and facilities designed to provide the best experience for all Padel enthusiasts.</p>
+    
+    <!-- Image Grid -->
+    <div class="image-grid">
+      <div class="image-item">
+        <img src="court.jpg" alt="Court">
+        <h3>Court</h3>
+      </div>
+      <div class="image-item">
+        <img src="outdoor.jpg" alt="Outdoor">
+        <h3>Outdoor</h3>
+      </div>
+      <div class="image-item">
+        <img src="tabletennis.jpg" alt="Table Tennis">
+        <h3>Table Tennis</h3>
+      </div>
+      <div class="image-item">
+        <img src="indoor.jpg" alt="Indoor">
+        <h3>Indoor</h3>
+      </div>
+      <div class="image-item">
+        <img src="jakaroo.jpg" alt="Jakaroo">
+        <h3>Jakaroo</h3>
+      </div>
+      <div class="image-item">
+        <img src="baloot.jpg" alt="Baloot">
+        <h3>Baloot</h3>
+      </div>
+      <div class="image-item">
+        <img src="kitchen.jpg" alt="Kitchen">
+        <h3>Kitchen</h3>
+      </div>
+      <div class="image-item">
+        <img src="padelbreeze.jpg" alt="Padel Breeze">
+        <h3>Padel Breeze</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- scheule -->
+  
+  <section id="schedule" class="section schedule-section">
     <div class="content">
-      <h2>Our Courts</h2>
-      <p>Explore our world-class courts designed to provide the best experience for all Padel enthusiasts.</p>
-      
-      <!-- Image Slider -->
-      <div class="slider">
-        <div class="slides">
-          <div class="slide" style="background-image: url('background1.jpg');"></div>
-          <div class="slide" style="background-image: url('background2.jpg');"></div>
-          <div class="slide" style="background-image: url('background3.jpg');"></div>
+      <h2>Schedule</h2>
+      <p><strong>We’re Open 24 Hours!</strong></p>
+      <p>
+        Enjoy your favorite padel matches at any time of the day or night. Whether it’s an early morning game or a late-night session, our courts are always ready for you.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- pricing -->
+
+  <section id="pricing" class="section pricing-section">
+    <div class="content">
+      <h2>Pricing</h2>
+      <p>Choose the perfect plan for your game time:</p>
+      <div class="pricing-container">
+        <div class="pricing-box">
+          <h3>1 Hour</h3>
+          <p><strong>100 SR</strong></p>
         </div>
-        <!-- Navigation Buttons -->
-        <button class="slider-btn prev-btn">❮</button>
-        <button class="slider-btn next-btn">❯</button>
+        <div class="pricing-box">
+          <h3>2 Hours</h3>
+          <p><strong>150 SR</strong></p>
+        </div>
+        <div class="pricing-box">
+          <h3>3 Hours</h3>
+          <p><strong>200 SR</strong></p>
+        </div>
       </div>
     </div>
   </section>
   
-  <!-- Schedule Section -->
-  <section id="schedule" class="section schedule-section">
-    <div class="content">
-      <h2>Schedule</h2>
-      <p><strong>Opening Hours:</strong> 5:00 PM - 3:00 AM, Every Day</p>
-      <p>Plan your matches and book courts during our operational hours. We're open late to accommodate your schedule!</p>
-    </div>
-  </section>
+  
 
-  <!-- Find Our Club Section -->
-  <section id="find-our-club" class="section find-club-section">
-    <div class="content">
-      <h2>Find Our Club</h2>
-      <p>Visit us at our Padel Club and enjoy world-class facilities. Here's where you can find us:</p>
-      <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509365!2d144.95373531531696!3d-37.8162792797516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43bf2cb7df%3A0xbbf9a4af1a43713b!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1672155279536!5m2!1sen!2sau"
-          width="100%"
-          height="350"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
+<!-- Find Our Club Section -->
+<section id="find-our-club" class="section find-club-section">
+  <div class="content">
+    <h2>Find Our Club</h2>
+    <p>Visit us at our Padel Club and enjoy world-class facilities. Here's where you can find us:</p>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.420736821797!2d46.58698311501038!3d24.91808468402326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ec1005286bcb5%3A0x2f480fe073ce1b29!2sPadelBreez%2C%20King%20Saud%20Street%2C%20Al%20Jubaylah%2C%20Riyadh%2013927%2C%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1672165284576!5m2!1sen!2ssa"
+        width="100%"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
-  </section>
+  </div>
+</section>
+
 
 <!-- Contact Section -->
 <section id="contact" class="section contact-section">
@@ -138,31 +195,29 @@
   
 <!-- Footer -->
 <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <h3>Follow Us</h3>
-        <p>Stay connected with us on social media for updates and more.</p>
-        <div class="social-links">
-          <!-- Instagram -->
-          <a href="https://instagram.com" target="_blank" class="social-link">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <!-- Twitter -->
-          <a href="https://twitter.com" target="_blank" class="social-link">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <!-- WhatsApp -->
-          <a href="https://wa.me/1234567890" target="_blank" class="social-link">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-          <!-- Email -->
-          <a href="mailto:info@padelclub.com" target="_blank" class="social-link">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
+  <div class="container">
+    <div class="footer-content">
+      <h3>Follow Us</h3>
+      <p>Stay connected with us for updates and more.</p>
+      <div class="social-links">
+        <!-- Instagram -->
+        <a href="https://instagram.com/padel.breeze" target="_blank" class="social-link">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/1234567890" target="_blank" class="social-link">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <!-- Email -->
+        <a href="mailto:info@padelclub.com" target="_blank" class="social-link">
+          <i class="fas fa-envelope"></i>
+        </a>
       </div>
-      <p>&copy; 2024 Padel Club. All rights reserved.</p>
+      <p><strong>Phone:</strong> <a href="tel:+1234567890" class="phone-number">+123-456-7890</a></p>
     </div>
-  </footer>
+    <p>&copy; 2024 Padel Club. All rights reserved.</p>
+  </div>
+</footer>
+
   
   
