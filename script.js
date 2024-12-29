@@ -121,3 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSlides(currentIndex);
   });
 });
+
+
+document.addEventListener('gesturestart', function(e) {
+  e.preventDefault(); // Prevent pinch-to-zoom
+});
+
+document.addEventListener('dblclick', function(e) {
+  e.preventDefault(); // Prevent double-tap zoom
+});
