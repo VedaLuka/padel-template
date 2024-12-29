@@ -4,16 +4,27 @@
 
 
 
-/* Prevent zooming on mobile */
+/* Universal Styling for No Horizontal Scrolling and Zoom Prevention */
 html, body {
   touch-action: manipulation; /* Disables pinch-to-zoom */
   overscroll-behavior: none; /* Prevents unintended scroll/zoom effects */
   overflow-x: hidden; /* Disable horizontal scrolling */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  width: 100%; /* Constrain to viewport width */
 }
 
-input, textarea, select {
-  touch-action: auto; /* Allow regular interactions for form inputs */
+/* Ensure all elements respect the viewport */
+* {
+  box-sizing: border-box; /* Prevent accidental overflows */
 }
+
+/* Fix for containers */
+.container {
+  max-width: 100%; /* Prevent containers from exceeding the viewport width */
+  overflow-x: hidden; /* Hide any overflowing content */
+}
+
 
 
    :root {
